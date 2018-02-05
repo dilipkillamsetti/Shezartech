@@ -22,13 +22,13 @@ angular.module('drsmith.controllers.loginctrl', [])
                      if($rootScope.type=="mentor")
                      {
                       $state.go("app.home");
-                      // $rootScope.hideTab=false;
+                       $rootScope.hideTab=false;
                      }
                      else
                      {
                        $rootScope.mentor_id=$scope.result.row.mid;
                        $state.go("app.mentee_home")
-                      // $rootScope.hideTab=true;
+                       $rootScope.hideTab=true;
                      }
                    
                   })

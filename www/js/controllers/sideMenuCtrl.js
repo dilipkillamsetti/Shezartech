@@ -1,10 +1,10 @@
 angular.module('drsmith.controllers.sideMenuCtrl', [])
-.controller('sideMenuCtrl', function($scope) {
+.controller('sideMenuCtrl', function($scope,$rootScope,$state,$ionicHistory) {
   console.log("calling...");
-    /*$scope.showMenu = function () {
-      $ionicSideMenuDelegate.toggleLeft();
-    };
-    $scope.showRightMenu = function () {
-      $ionicSideMenuDelegate.toggleRight();
-    };*/
+  console.log($rootScope.hideTab)
+  $scope.logout=function(){
+   $ionicHistory.clearHistory()
+
+    $state.go("login")
+  }
   })

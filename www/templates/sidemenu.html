@@ -10,29 +10,7 @@
               </button>
             </ion-nav-buttons>
           </ion-nav-bar>
-
-          <!--ion-nav-bar class="bar-positive">
-            <ion-nav-back-button class="ion-ios-arrow-back">
-            </ion-nav-back-button>
-          </ion-nav-bar>
-          <ion-nav-buttons side="left">
-            <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-            </button>
-          </ion-nav-buttons>
-          <ion-nav-view animation="slide-left-right"></ion-nav-view-->
-          <ion-tabs class="tabs-icon-top tabs-positive" ng-hide="$root.hideTab">
-
-            <!--ion-tab title="Home" icon="ion-home" href="#/app/home">
-              <ion-nav-view name=""></ion-nav-view>
-            </ion-tab>
-
-            <ion-tab title="Goals" icon="ion-ionic" href="#/app/goals">
-              <ion-nav-view name="about-tab"></ion-nav-view>
-            </ion-tab>
-
-            <ion-tab title="Forum" icon="ion-chatbubbles" href="#/app/forum">
-              <ion-nav-view name="contact-tab"></ion-nav-view>
-            </ion-tab-->
+          <ion-tabs class="tabs-icon-top tabs-positive" ng-class="{'tabs-item-hide': $root.hideTab}">
 
             <ion-tab title="Home" icon-off="ion-home" icon-on="ion-home-active" href="#/app/home">
               <ion-nav-view name="tab-home"></ion-nav-view>
@@ -59,7 +37,12 @@
                 <div class="row">
                   <div class="col col-center">
                     
-                    <ion-item class="item-icon-left item-icon-right" menu-close ui-sref="app.home" >
+                    <ion-item class="item-icon-left item-icon-right" menu-close ui-sref="app.home" ng-show="!$root.hideTab">
+                      <h2 class="menu-text">Home</h2>
+                      <i class="item-pointer-icon icon ion-chevron-right"></i>
+                    </ion-item>
+
+                    <ion-item class="item-icon-left item-icon-right" menu-close ui-sref="app.mentee_home" ng-show="$root.hideTab">
                       <h2 class="menu-text">Home</h2>
                       <i class="item-pointer-icon icon ion-chevron-right"></i>
                     </ion-item>
@@ -95,7 +78,7 @@
                     </ion-item>
 
                     <ion-item class="item-icon-left item-icon-right" menu-close on-tap="logout()">
-                      <h2 class="menu-text">Logout</h2>
+                      <h2 class="menu-text" ng-click="loguot()">Logout</h2>
                       <i class="item-pointer-icon icon ion-chevron-right"></i>
                     </ion-item>
                   </div>
@@ -103,5 +86,4 @@
               </ion-list>
             </ion-content>
         </ion-side-menu>  
-
       </ion-side-menus>
