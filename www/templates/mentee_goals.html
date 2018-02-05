@@ -1,0 +1,16 @@
+<ion-view title="Learning Goals">
+        <ion-content ng-init="getgoals()">
+                <ion-list>
+                        <ion-item ng-repeat="goal in goals">
+                      <a href="#/app/goal_comments/{{goal.id}}">{{goal.goals}} </a>
+                      <a><img src="{{url}}/myproject/download.php?nama={{goal.file_url}}" width="40" height="40" alt="error"></a>         
+                           </ion-item>
+                 </ion-list>
+                 <label class="item item-input item-floating-label">
+                        <input type="text" id="goal" placeholder="Add Goal Here"   ng-model="new_goal">
+                        <input type="file" id="inputFile"  ng-model="files">
+                      </label>
+                <button class="button button-block button-positive" ng-click="addgoal(new_goal,files)">Add Goal</button>
+                <ion-list>
+        </ion-content>
+</ion-view>

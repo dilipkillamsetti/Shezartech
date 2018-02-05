@@ -1,0 +1,36 @@
+<ion-view title={{title}}>
+        <ion-content ng-init="get()">
+
+                <center>
+                        <h4>
+                          id:  {{mentee.row.id}}
+                        </h4>
+                        <h4>
+                          name: {{mentee.row.name}}
+                        </h4>
+                        <h4>
+                        address:{{mentee.row.address}}
+                        </h4>
+                        <h4>
+                           mentor_name: {{mentee.mentor}}
+                        </h4>
+                    </center>
+                <div>
+                <div>
+                <h3>   <a href="#/app/mentee_goals/{{mentee.row.id}}">LearningGoals</a></h3>
+                </div>
+                <h3>   <a href="#/app/mentee_tasks">Tasks</a></h3>
+                </div>
+                
+                <div>
+                        <label for="date">Date</label>
+                        <input id="date" type="date"  ng-model="date"/>
+                        <input id="starttime" type="time" ng-model="stime" />
+                        <input id="finishtime" type="time" ng-model="ftime" />
+                        <button ng-click="addschedules(date,stime,ftime)">Submit</button>
+                </div>
+                    <div>
+                         <h3>   <a href="#/app/mentee_interactions">Interactions</a></h3>
+                    </div>
+        </ion-content>
+      </ion-view>
