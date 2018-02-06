@@ -1,6 +1,6 @@
 angular.module('drsmith.controllers.loginctrl', [])
 .controller('loginctrl', function($scope, $http, $state,$rootScope) {
-    $rootScope.url = "http://192.168.1.158";
+    $rootScope.url = "http://192.168.0.101";
     $scope.redirect=function(Email,Password){
                 console.log(Email)
                 console.log(Password)
